@@ -1,7 +1,7 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import ThirdPage from "../pages/ThirdPage";
 
-function ThirdScreen({ navigation, route }) {
+function SauceRecipe({ navigation, route }) {
   return (
     <SafeAreaView>
       <ThirdPage navigation={navigation} route={route} />
@@ -9,4 +9,4 @@ function ThirdScreen({ navigation, route }) {
   );
 }
 
-export default ThirdScreen;
+export default SauceRecipe;
