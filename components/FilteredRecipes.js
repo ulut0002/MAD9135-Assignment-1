@@ -1,18 +1,11 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  FlatList,
-  ScrollView,
-  ActivityIndicator,
-} from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import { useApp } from "../context/useApp";
 import FilteredRecipeItem from "./FilteredRecipeItem";
 import ResultListEmpty from "./ResultListEmpty";
 
 const FilteredRecipes = () => {
-  const { filteredRecipes, loadingRecipes } = useApp();
+  const { filteredRecipes } = useApp();
 
   // source: chatGPT
   const ItemSeparator = () => {

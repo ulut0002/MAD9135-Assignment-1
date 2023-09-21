@@ -5,10 +5,7 @@ import {
   Text,
   View,
 } from "react-native";
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Style from "../style/Style";
 import { useApp } from "../context/useApp";
 import { useEffect } from "react";
