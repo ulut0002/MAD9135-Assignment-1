@@ -1,4 +1,10 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Button,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import {
   SafeAreaView,
   useSafeAreaInsets,
@@ -10,9 +16,9 @@ import FilteredRecipes from "../components/FilteredRecipes";
 
 function HomeScreen({ navigation }) {
   const insets = useSafeAreaInsets();
-  const { retrieveRecipes, usersIngredients } = useApp();
+  const { retrieveRecipes, usersIngredients, loadingRecipes } = useApp();
 
-  // User updates ingredient list => triggers a new fetch
+  // User updates ingredient list on UserIngredientsScreen => triggers a new fetch
   useEffect(() => {
     retrieveRecipes();
   }, [usersIngredients]);
@@ -39,14 +45,17 @@ function HomeScreen({ navigation }) {
         }}
       ></Button>
       <Button
-        title="View Recipes"
+        title="Filter Recipes"
         onPress={() => {
           retrieveRecipes();
         }}
       ></Button>
-      <View style={styles.filteredRecipes}>
-        <FilteredRecipes />
-      </View>
+      {loadingRecipes && <ActivityIndicator />}
+      {!loadingRecipes && (
+        <View style={styles.filteredRecipes}>
+          <FilteredRecipes />
+        </View>
+      )}
     </View>
   );
 }

@@ -14,7 +14,7 @@ import Style from "../style/Style";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Linking } from "react-native";
 
-function SauceRecipe() {
+function SauceRecipeScreen() {
   const route = useRoute();
   const insets = useSafeAreaInsets();
   const { id } = route.params;
@@ -121,7 +121,7 @@ function SauceRecipe() {
                   ]}
                 >
                   <MaterialIcons name="circle" size={8} color="black" />
-                  <Text>{qty}</Text>
+                  <Text>{qty.trim()}</Text>
                 </View>
               );
             })}
@@ -142,7 +142,7 @@ function SauceRecipe() {
                   <View style={styles.circle}>
                     <Text style={styles.directionIndex}>{stepCounter}</Text>
                   </View>
-                  <Text style={{ flex: 1 }}>{description}</Text>
+                  <Text style={{ flex: 1 }}>{description.trim()}</Text>
                 </View>
               );
             })}
@@ -232,4 +232,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SauceRecipe;
+export default SauceRecipeScreen;

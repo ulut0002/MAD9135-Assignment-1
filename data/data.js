@@ -452,4 +452,95 @@ export const recipes = [
       },
     ],
   },
+  {
+    source: "https://bellyfull.net/homemade-alfredo-sauce/",
+    id: "homemade-alfredo-sauce",
+    name: "Homemade Alfredo Sauce",
+    description:
+      "The best homemade Alfredo sauce recipe made from scratch with only a handful of natural ingredients. It’s so easy, comes together in just minutes, and will knock your pasta socks off! Store-bought Alfredo doesn’t even compare.",
+    image:
+      "https://bellyfull.net/wp-content/uploads/2021/02/Alfredo-Sauce-blog.jpg",
+    prepTime: "10",
+    cookTime: "10",
+    servings: "2",
+    ingredients: [
+      {
+        item: "BUTTER",
+        qty: "1/2 cup butter , cut into large cubes or slices",
+      },
+      { item: "WHIPPING_CREAM", qty: "2 cups heavy whipping cream" },
+      { item: "GARLIC", qty: "1 clove garlic , minced" },
+      { item: "GARLIC", qty: "3/4 teaspoon garlic powder" },
+      { item: "ITALIAN_SEASONING", qty: "3/4 teaspoon Italian Seasoning" },
+      {
+        item: "PARMESAN",
+        qty: "2 cups freshly grated Parmigiano-Reggiano cheese",
+      },
+      {
+        item: "PEPPER_BLACK",
+        qty: "Freshly ground black pepper ",
+      },
+    ],
+    directions: [
+      {
+        description:
+          "Add the butter and cream to a large nonstick saute pan, over medium-low heat; whisk until butter has melted.",
+      },
+      {
+        description:
+          "Add in the minced garlic, garlic powder, Italian seasoning, salt, and pepper; whisk until combined and smooth.",
+      },
+      {
+        description:
+          "Bring to a gentle simmer (do not boil) and cook for 3-4 minutes, whisking constantly, until it starts to thicken.",
+      },
+      {
+        description:
+          "Stir in the parmesan cheese just until melted and the sauce is smooth.",
+      },
+      {
+        description:
+          "Take off the heat and toss with cooked fettuccine noodles (or your favorite pasta.)",
+      },
+      {
+        description:
+          "(If the sauce isn't quite thick enough, allow it to stand for 2-3 minutes before tossing with the pasta.)",
+      },
+    ],
+  },
+  {
+    source:
+      "https://www.delish.com/cooking/recipe-ideas/a43353119/alfredo-sauce-recipe/",
+    id: "a43353119",
+    name: "Homemade Alfredo Sauce by Francesca Zani",
+    description:
+      "We love Alfredo sauce, and are constantly trying to use it in creative ways. Classic chicken fettuccine Alfredo, weeknight-friendly one- pan ranch chicken Alfredo, and party perfect Alfredo asparagus bundles are three of our faves, but there’s no limit to how you can use this creamy sauce.",
+    image:
+      "https://hips.hearstapps.com/hmg-prod/images/delish-23-03-29-alfredosauce-ls-191-secondary-643446dc662ed.jpg?resize=980:*",
+    prepTime: "5",
+    cookTime: "15",
+    servings: "20",
+    ingredients: [
+      {
+        item: "BUTTER",
+        qty: "3 tbsp. unsalted butter",
+      },
+      { item: "WHIPPING_CREAM", qty: "2 c. heavy cream" },
+      { item: "GARLIC", qty: "1 clove garlic, finely grated" },
+      {
+        item: "PARMESAN",
+        qty: "1 c. finely grated Parmesan (about 2 oz.)",
+      },
+    ],
+    directions: [
+      {
+        description:
+          "In a medium saucepan over medium heat, melt butter. Add garlic and cook, stirring frequently, until fragrant, about 2 minutes. Stir in cream and bring to a simmer. Cook, stirring occasionally, until sauce thickens slightly, about 10 minutes.",
+      },
+      {
+        description:
+          "Remove pot from heat. Gradually add Parmesan, whisking constantly, until sauce is smooth and creamy. Whisk in salt.",
+      },
+    ],
+  },
 ];

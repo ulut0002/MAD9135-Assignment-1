@@ -1,11 +1,18 @@
 import React from "react";
-import { View, StyleSheet, Text, FlatList, ScrollView } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  FlatList,
+  ScrollView,
+  ActivityIndicator,
+} from "react-native";
 import { useApp } from "../context/useApp";
 import FilteredRecipeItem from "./FilteredRecipeItem";
 import ResultListEmpty from "./ResultListEmpty";
 
 const FilteredRecipes = () => {
-  const { filteredRecipes } = useApp();
+  const { filteredRecipes, loadingRecipes } = useApp();
 
   // source: chatGPT
   const ItemSeparator = () => {
@@ -32,6 +39,7 @@ const FilteredRecipes = () => {
       renderItem={renderItem}
       ItemSeparatorComponent={ItemSeparator}
       ListEmptyComponent={ResultListEmpty}
+      showsVerticalScrollIndicator={false}
     ></FlatList>
   );
 };
