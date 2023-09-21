@@ -1,19 +1,18 @@
-import SecondPage from "../pages/SecondPage";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { FlatList, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import { useApp } from "../context/useApp";
 import { useEffect, useState } from "react";
 import Ingredient from "../components/Ingredient";
+import Style from "../style/Style";
 
 function UserIngredientsScreen({ navigation, route }) {
   const insets = useSafeAreaInsets();
-  const { ingredients, usersIngredients, setUsersIngredients } = useApp();
+  const { ingredients, usersIngredients } = useApp();
 
   const [selectedIngredients, setSelectedIngredients] = useState([]);
-  const selectIngredient = (id) => {};
-  const deSelectIngredient = (id) => {};
 
-  // initial load.
+  // Load the master list of ingredients,
+  // and mark the existing ingredients in the list as .selected = true
   useEffect(() => {
     const list = ingredients.map((item) => {
       const { id } = item;
@@ -29,6 +28,7 @@ function UserIngredientsScreen({ navigation, route }) {
     setSelectedIngredients(list);
   }, []);
 
+  // each list item will display a caption, and a checkbox
   const renderItem = ({ item }) => {
     const { id, name, selected } = item;
     return (
@@ -43,13 +43,16 @@ function UserIngredientsScreen({ navigation, route }) {
 
   return (
     <View
-      style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        paddingLeft: insets.left,
-        paddingRight: insets.right,
-      }}
+      style={[
+        {
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+          paddingLeft: insets.left,
+          paddingRight: insets.right,
+        },
+      ]}
     >
+      <Text style={Style.cta_title}>What do you have in your kitchen?</Text>
       <FlatList
         data={selectedIngredients}
         keyExtractor={(item) => item.id}
@@ -60,9 +63,3 @@ function UserIngredientsScreen({ navigation, route }) {
 }
 
 export default UserIngredientsScreen;
-
-// {selectedIngredients.map((item) => {
-//   return (
-
-//   );
-// })}

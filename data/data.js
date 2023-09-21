@@ -1,5 +1,32 @@
 // Data source: https://www.allrecipes.com/search?q=alfredo+sauce
 
+export const defaultIngredients2 = [
+  "BUTTER",
+  "GARLIC",
+  "PEPPER_BLACK",
+  "PEPPER_WHITE",
+  "FLOUR",
+  "CREAM_CHEESE",
+];
+
+export const defaultIngredients = [
+  "BUTTER",
+  "CREAM_CHEESE",
+  "GARLIC",
+  "MILK",
+  "PARMESAN",
+  "PEPPER_BLACK",
+  "PEPPER_WHITE",
+  "HEAVY_CREAM",
+  "PARSLEY",
+  "WHIPPING_CREAM",
+  "NUTMEG",
+  "MOZZARELLA",
+  "SPINACH",
+  "FLOUR",
+  "ITALIAN_SEASONING",
+];
+
 export const ingredients = [
   {
     id: "BUTTER",
@@ -228,7 +255,7 @@ export const recipes = [
       { item: "PARMESAN", qty: "1/2 cup grated Parmesan cheese" },
       {
         item: "MOZZARELLA",
-        qty: "¾ cup shredded mozzarella cheese",
+        qty: "3/4 cup shredded mozzarella cheese",
       },
     ],
     directions: [
@@ -348,6 +375,80 @@ export const recipes = [
       {
         description:
           "Season with Italian seasoning, salt, and pepper. Cook and stir until sauce reaches desired consistency, 5 to 10 minutes.",
+      },
+    ],
+  },
+  {
+    source: "https://thesaltymarshmallow.com/best-homemade-alfredo-sauce/",
+    id: "best-homemade-alfredo-sauce",
+    name: "Best Homemade Alfredo Sauce",
+    description:
+      "Best Homemade Alfredo Sauce is rich, creamy, and packed with garlic parmesan flavor!  This Alfredo Sauce is easy to make and perfect with your favorite pasta!",
+    image:
+      "https://thesaltymarshmallow.com/wp-content/uploads/2018/08/alfredo-sauce3.jpg",
+    prepTime: "5",
+    cookTime: "5",
+    servings: "2",
+    ingredients: [
+      { item: "BUTTER", qty: "1/2 cup butter" },
+      { item: "WHIPPING_CREAM", qty: "1 1/2 Cups Heavy Whipping Cream" },
+      {
+        item: "GARLIC",
+        qty: "2 Teaspoons Garlic Minced",
+      },
+      {
+        item: "ITALIAN_SEASONING",
+        qty: "1/2 Teaspoon Italian Seasoning",
+      },
+      { item: "PARMESAN", qty: "2 Cups Freshly Grated Parmesan Cheese" },
+      {
+        item: "PEPPER_BLACK",
+        qty: "1/4 Teaspoon Pepper",
+      },
+    ],
+    directions: [
+      {
+        description: "Add the butter and cream to a large skillet.",
+      },
+      {
+        description: "Simmer over low heat for 2 minutes.",
+      },
+      {
+        description:
+          "Whisk in the garlic, Italian seasoning, salt, and pepper for one minute.",
+      },
+      { description: "Whisk in the parmesan cheese until melted." },
+      { description: "Serve immediately." },
+    ],
+  },
+  {
+    source:
+      "https://www.foodnetwork.com/recipes/ree-drummond/alfredo-sauce-2165760",
+    id: "2165760",
+    name: "Alfredo Sauce by Ree Drummond",
+    description:
+      "Experience the ultimate in creamy indulgence with our Homemade Alfredo Sauce. Rich, garlicky, and packed with parmesan goodness, this easy-to-make sauce elevates any pasta dish into a gourmet delight. Perfect for both chefs and home cooks, it turns ordinary dinners into culinary adventures, delivering pure decadence in every bite.",
+    image:
+      "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/8/20/0/WU0511H_alfredo-sauce-recipe_s4x3.jpg.rend.hgtvcom.1280.720.suffix/1433674870581.jpeg",
+    prepTime: "10",
+    cookTime: "10",
+    servings: "2",
+    ingredients: [
+      { item: "BUTTER", qty: "1 stick butter" },
+      { item: "HEAVY_CREAM", qty: "1 cup heavy cream" },
+      { item: "PARMESAN", qty: "2 cups freshly grated Parmesan" },
+      {
+        item: "PEPPER_BLACK",
+        qty: "Freshly ground black pepper ",
+      },
+    ],
+    directions: [
+      {
+        description:
+          "In a saucepan or skillet, warm the butter and cream. Season with salt and pepper. Add the Parmesan and stir until melted.",
+      },
+      {
+        description: "Toss to combine, thinning with pasta water if necessary.",
       },
     ],
   },

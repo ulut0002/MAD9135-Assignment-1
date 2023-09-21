@@ -1,8 +1,28 @@
 import { createContext, useContext, useState } from "react";
 import {
+  defaultIngredients,
   ingredients as ingredientsData,
   recipes as recipesData,
 } from "../data/data";
+
+const loadDefaultIngredients = () => {
+  if (
+    defaultIngredients &&
+    Array.isArray(defaultIngredients) &&
+    defaultIngredients.length > 0
+  ) {
+    const list = [];
+    defaultIngredients.forEach((item) => {
+      const ingredient = ingredientsData.find((item2) => {
+        return item2.id == item;
+      });
+      if (ingredient) list.push(ingredient);
+    });
+    return list;
+  } else {
+    return [];
+  }
+};
 
 const AppContext = createContext({});
 
@@ -13,19 +33,42 @@ export function useApp() {
 export function AppProvider({ children }) {
   const [ingredients, setIngredients] = useState(ingredientsData);
   const [recipes, setRecipes] = useState(recipesData);
-  const [usersIngredients, setUsersIngredients] = useState([]);
+  const [usersIngredients, setUsersIngredients] = useState(
+    loadDefaultIngredients()
+  );
+
   const [filteredRecipes, setFilteredRecipes] = useState([]);
 
-  const getUpdatedUserIngredientList = (selectedIngredientId, add = true) => {
-    const newList = usersIngredients.map((item) => {
-      const { id } = item;
-      if (selectedIngredientId === id) {
-        return { ...item, selected: add === true };
-      } else {
-        return { ...item };
+  const retrieveRecipes = () => {
+    const list = recipes.filter((recipe) => {
+      const { ingredients: recipeIngredients } = recipe;
+      // console.log("recipeIngredients", recipeIngredients);
+
+      if (
+        !recipeIngredients ||
+        !Array.isArray(recipeIngredients) ||
+        recipeIngredients.length === 0
+      )
+        return false;
+
+      let goodRecipe = true;
+      const count = recipeIngredients.count;
+
+      recipeIngredients.forEach((recipeIngredient) => {
+        const index = usersIngredients.findIndex((userIngredient) => {
+          return userIngredient.id === recipeIngredient.item;
+        });
+        if (index < 0) {
+          goodRecipe = false;
+        }
+      });
+
+      if (goodRecipe) {
+        return true;
       }
+      return false;
     });
-    return newList;
+    setFilteredRecipes(list);
   };
 
   const addUserIngredient = (selectedIngredientId) => {
@@ -49,14 +92,15 @@ export function AppProvider({ children }) {
   };
 
   const isIngredientSelected = (id) => {
-    if (id === "BUTTER") {
-      console.log(usersIngredients);
-    }
     const itemFound = usersIngredients.find((item) => {
       return id == item.id;
     });
     if (!itemFound) return false;
     return true;
+  };
+
+  const getRecipeDetails = (id) => {
+    return recipes.find((item) => item.id === id);
   };
 
   return (
@@ -70,6 +114,8 @@ export function AppProvider({ children }) {
         addUserIngredient,
         removeUserIngredient,
         isIngredientSelected,
+        retrieveRecipes,
+        getRecipeDetails,
       }}
     >
       {children}

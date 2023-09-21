@@ -23,8 +23,6 @@ const Ingredient = ({ ingredientID, ingredientName = "Ingredient" }) => {
         if (!currentSelection) {
           addUserIngredient && addUserIngredient(ingredientID);
         } else {
-          console.log("here2");
-
           removeUserIngredient && removeUserIngredient(ingredientID);
         }
         setCurrentSelection(!currentSelection);

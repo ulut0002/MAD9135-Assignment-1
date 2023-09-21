@@ -1,14 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { AppProvider } from "./context/useApp";
 
 import HomeScreen from "./screens/HomeScreen";
-import { AppProvider } from "./context/useApp";
 import UserIngredientsScreen from "./screens/UserIngredientsScreen";
 import SauceRecipe from "./screens/SauceRecipe";
-const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
     <SafeAreaProvider>
       <AppProvider>
@@ -27,7 +27,7 @@ export default function App() {
             <Stack.Screen
               name="Recipe"
               component={SauceRecipe}
-              options={{ title: "Third" }}
+              options={{ title: "Recipe" }}
             ></Stack.Screen>
           </Stack.Navigator>
         </NavigationContainer>
