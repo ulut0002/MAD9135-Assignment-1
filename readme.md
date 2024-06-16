@@ -28,10 +28,9 @@ The app uses persistent data as the Single Source of Truth (SSOT). It leverages 
    ```
 4. Run the app
 
-```bash
-npm start
-
-```
+   ```bash
+   npm start
+   ```
 
 5. Scan the QR code on Expo.dev and run the app on your mobile device
 
