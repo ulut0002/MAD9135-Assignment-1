@@ -1,8 +1,41 @@
-# REACT NATIVE - ASSIGNMENT 1
+# REACT NATIVE - ASSIGNMENT 1 (MAD9135)
 
-## Alfredo Sauce Selection helper
+This repository contains the assignment project for the MAD9135 course. It is developed with React Native on Expo.
 
-The app lists Alfredo sauce recipes based on what the user has in their kitchen.
+## Project Description
+
+The app lists Alfredo sauce recipes based on what the user has in their kitchen. It has three screens:
+
+- Home Screen: Displays available recipes.
+- Ingredient Selection Screen: Allows users to select ingredients.
+- Recipe Detail Screen: Shows detailed recipe information.
+
+The app uses persistent data as the Single Source of Truth (SSOT). It leverages React Context to expose functions to various parts of the application, creating a reflective and cohesive user experience.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ulut0002/MAD9135-Assignment-1.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd MAD9135-Assignment-1
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the app
+
+```bash
+npm start
+
+```
+
+5. Scan the QR code on Expo.dev and run the app on your mobile device
+
+## Usage
 
 ### Step 1
 
